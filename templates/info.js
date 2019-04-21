@@ -1,31 +1,31 @@
 var info = {};
 
 info.pkg = {
-  name: 'semantic:ui',
+  name: 'mrmowgli:fomantic-ui',
   version: '<%= pkgVersion %>',
-  base: './dist/semantic-ui',
-  git: 'git@github.com:Semantic-Org/Semantic-UI-Meteor.git'
+  base: './dist/fomantic-ui',
+  git: 'git@github.com:mrmowgli/Fomantic-UI-Meteor.git'
 };
 
 // If changing version, need to update info.pkg.version because it depends on this version
 info.pkgData = {
-  name: 'semantic:ui-data',
+  name: 'mrmowgli:fomantic-ui-data',
   version: '<%= pkgDataVersion %>',
-  base: './dist/semantic-ui-data',
-  lib: './dist/semantic-ui-data/lib',
-  git: 'git@github.com:Semantic-Org/Semantic-UI-Meteor-Data.git',
-  semanticUi: './dist/semantic-ui-data/lib/semantic-ui'
+  base: './dist/fomantic-ui-data',
+  lib: './dist/fomantic-ui-data/lib',
+  git: 'git@github.com:mrmowgli/Fomantic-UI-Meteor-Data.git',
+  fomanticUi: './dist/fomantic-ui-data/lib/fomantic-ui'
 };
 
-info.semantic = {
-  repo: 'https://github.com/Semantic-Org/Semantic-UI.git',
-  tag: "<%= semanticVersion %>",
-  baseSrc: 'tmp/semantic-ui-original',
-  baseDest:'tmp/semantic-ui-modified',
-  themesUrl: '/lib/semantic-ui/src/themes/'
+info.fomantic = {
+  repo: 'https://github.com/fomantic/Fomantic-UI-LESS.git',
+  tag: "<%= fomanticVersion %>",
+  baseSrc: 'tmp/fomantic-ui-original',
+  baseDest:'tmp/fomantic-ui-modified',
+  themesUrl: '/lib/fomantic-ui/src/themes/'
 };
 
-var srcSourcePath = info.semantic.baseSrc + '/src';
+var srcSourcePath = info.fomantic.baseSrc + '/src';
 var src = {
   srcPath: srcSourcePath,
   allFiles: srcSourcePath + '/**/*.*',
@@ -36,10 +36,10 @@ var src = {
   themeConfigFile: srcSourcePath + '/theme.config.example',
   themeLessFile: srcSourcePath + '/theme.less'
 };
-info.semantic.src = src;
+info.fomantic.src = src;
 
-var destSourcePath = info.semantic.baseDest + '/src';
-var relativePath = 'lib/semantic-ui/src';
+var destSourcePath = info.fomantic.baseDest + '/src';
+var relativePath = 'lib/fomantic-ui/src';
 
 var dest = {
   srcPath: destSourcePath,

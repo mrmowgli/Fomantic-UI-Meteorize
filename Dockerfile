@@ -1,4 +1,4 @@
-FROM node:7.2
+FROM node:8.9.1
 RUN apt-get -y update && apt-get -y upgrade && rm -rf /var/cache/apt/*
 RUN npm install -g gulp
 USER node

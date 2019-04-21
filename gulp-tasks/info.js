@@ -21,8 +21,8 @@ gulp.task('info:remove', function(callback) {
 });
 
 gulp.task('info:template', function(callback) {
-  if (semanticVersion === "") {
-    console.log('semantic version is missing.');
+  if (fomanticVersion === "") {
+    console.log('Fomantic version is missing.');
     process.exit(1);
   }
   const infoTemplate = './templates/info.js';
@@ -30,7 +30,7 @@ gulp.task('info:template', function(callback) {
     .pipe(template({
       pkgVersion: packageVersion,
       pkgDataVersion: packageVersion,
-      semanticVersion: semanticVersion
+      fomanticVersion: fomanticVersion
     }))
     .pipe(gulp.dest('./tmp/'));
 });

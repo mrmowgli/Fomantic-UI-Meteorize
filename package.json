@@ -1,7 +1,7 @@
 {
-  "name": "meteorize-semantic-ui",
-  "version": "1.0.0",
-  "description": "Makes Semantic UI as a Meteor Package.",
+  "name": "meteorize-fomantic-ui",
+  "version": "1.5.1",
+  "description": "Makes Fomantic UI as a Meteor Package.",
   "main": "gulpfile.js",
   "dependencies": {
     "del": "^1.1.1",
@@ -29,8 +29,8 @@
   "keywords": [
     "meteor",
     "package",
-    "semanticui"
+    "fomanticui"  
   ],
-  "author": "Frederic Lemay",
+  "author": "Frederic Lemay, Andre Lewis",
   "license": "MIT"
 }
