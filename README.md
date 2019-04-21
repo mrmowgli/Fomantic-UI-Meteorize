@@ -1,33 +1,35 @@
-Semantic UI Meteorize
+Fomantic UI Meteorize
 =====================
 
-This tool generates 2 meteor packages based on Semantic UI.
+This tool generates 2 unofficial meteor packages based on Fomantic UI.
 
-- [Semantic-UI-Meteor-Data](https://github.com/Semantic-Org/Semantic-UI-Meteor-Data)
-- [Semantic-UI-Meteor](https://github.com/Semantic-Org/Semantic-UI-Meteor)
+- [Fomantic-UI-Meteor-Data](https://github.com/mrmowgli/Fomantic-UI-Meteor-Data)
+- [Fomantic-UI-Meteor](https://github.com/mrmowgli/Fomantic-UI-Meteor)
 
 Pre-requisites
 ---------------
 
 - Docker
-- Write access to Semantic-UI-Meteor-Data and Semantic-UI-Meteor
+- Write access to Fomantic-UI-Meteor-Data and Fomantic-UI-Meteor
 - Publish access to Atmosphere for the packages
-  - <https://atmospherejs.com/semantic/ui>
-  - <https://atmospherejs.com/semantic/ui-data>
+  - <https://atmospherejs.com/mrmowgli/fomantic-ui>
+  - <https://atmospherejs.com/mrmowgli/fomantic-ui-data>
 
 Versioning
 ----------
 
-The versions of each packages are identical based on the version of Semantic UI.
+The versions of each packages are identical based on the version of Fomantic UI.
 
-If `PACKAGE_VERSION` is `2.2.6` then it will download Semantic UI `v2.2.6` and generate the packages with version `2.2.6`.
+If `PACKAGE_VERSION` is `2.7.1` then it will download Semantic UI `v2.7.1` and generate the packages with version `2.7.1`.
 
-Sometime you may want to fix a package and the version of Semantic UI has not been changed. Therefore you can use `PACKAGE_VERSION=2.2.6_1` which will still download Semantic UI `2.2.6` but will publish the packages with version `2.2.6_1`.
+Sometime you may want to fix a package and the version of Fomantic UI has not been changed. Therefore you can use `PACKAGE_VERSION=2.7.1_1` which will still download Fomantic UI `2.7.1` but will publish the packages with version `2.7.1_1`.
 
 Usage
 ------
 
 ```bash
+# Set up the package version
+export PACKAGE_VERSION=2.7.1
 # build docker image
 $ make docker-build
 # configure env.sh
@@ -43,9 +45,9 @@ $ make generate
 
 # do some testing!!!
 
-# publish semantic:ui-data
+# publish mrmowgli:fomantic-ui-data
 $ make publish-ui-data
-# publish semantic:ui
+# publish mrmowgli:semantic-ui
 $ make publish-ui
 # clean
 $ make clean
@@ -66,9 +68,9 @@ $ make generate
 
 # do some testing!!!
 
-# publish semantic:ui-data
+# publish mrmowgli:fomantic-ui-data
 $ make publish-ui-data
-# publish semantic:ui
+# publish mrmowgli:semantic-ui
 $ make publish-ui
 ```
 

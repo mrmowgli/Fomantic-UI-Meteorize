@@ -6,7 +6,7 @@
 
 autopublish
 insecure
-semantic:ui
+mrmowgli/fomantic-ui
 standard-minifiers
 meteor-base
 mobile-experience

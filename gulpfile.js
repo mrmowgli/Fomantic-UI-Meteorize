@@ -1,19 +1,19 @@
 // PACKAGE_VERSION=2.1.3 gulp
 // PACKAGE_VERSION=2.1.3_2 gulp
 packageVersion = process.env.PACKAGE_VERSION || "";
-semanticVersion = null;
+fomanticVersion = null;
 if (packageVersion === "") {
   console.log("PACKAGE_VERSION is needed");
   process.exit(1);
 } else {
   if (packageVersion.indexOf("_") > -1) {
-    semanticVersion = packageVersion.substring(0, packageVersion.indexOf("_"));
+    fomanticVersion = packageVersion.substring(0, packageVersion.indexOf("_"));
   } else {
-    semanticVersion = packageVersion;
+    fomanticVersion = packageVersion;
   }
 }
 console.log("Package Version " + packageVersion);
-console.log("Semantic Version " + semanticVersion);
+console.log("Fomantic Version " + fomanticVersion);
 
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
@@ -33,11 +33,11 @@ gulp.task('meteorize', function(callback) {
   var tasks = [
     'clean',
     'info',
-    'semantic-ui-original',
-    'semantic-ui-modified',
+    'fomantic-ui-original',
+    'fomantic-ui-modified',
     'data',
-    'semantic-ui-data',
-    'semantic-ui',
+    'fomantic-ui-data',
+    'fomantic-ui',
     callback
   ];
 

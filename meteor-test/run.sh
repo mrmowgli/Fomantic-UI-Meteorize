@@ -3,7 +3,7 @@
 
 usage() {
   echo "Usage: $0 [clean|start]"
-  echo "  clean: removes everything from client except custom.semantic.json"
+  echo "  clean: removes everything from client except custom.fomantic.json"
   echo "  start: starts meteor"
 }
 
@@ -16,8 +16,8 @@ clean() {
   rm -fr client/definitions \
         client/site \
         client/themes \
-        client/.custom.semantic.json \
-        client/semantic.less \
+        client/.custom.fomantic.json \
+        client/fomantic.less \
         client/theme.config.import.less \
         client/theme.import.less
 }

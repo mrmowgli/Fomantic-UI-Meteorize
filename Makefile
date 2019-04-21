@@ -1,6 +1,6 @@
-IMAGE_NAME=semantic-ui-meteorize
-SEMANTIC_UI_PACKAGE=dist/semantic-ui
-SEMANTIC_UI_DATA_PACKAGE=dist/semantic-ui-data
+IMAGE_NAME=fomantic-ui-meteorize
+FOMANTIC_UI_PACKAGE=dist/fomantic-ui
+FOMANTIC_UI_DATA_PACKAGE=dist/fomantic-ui-data
 
 docker-build:
 	docker build -t $(IMAGE_NAME) .
@@ -22,11 +22,11 @@ publish: publish-ui-data publish-ui
 .PHONY: publish
 
 publish-ui-data:
-	PACKAGE_PATH=$(SEMANTIC_UI_DATA_PACKAGE) ./scripts/publish.sh
+	PACKAGE_PATH=$(FOMANTIC_UI_DATA_PACKAGE) ./scripts/publish.sh
 .PHONY: publish-ui-data
 
 publish-ui:
-	PACKAGE_PATH=$(SEMANTIC_UI_PACKAGE) ./scripts/publish.sh
+	PACKAGE_PATH=$(FOMANTIC_UI_PACKAGE) ./scripts/publish.sh
 .PHONY: publish-ui
 
 clean:
