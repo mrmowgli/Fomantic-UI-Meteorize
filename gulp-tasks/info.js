@@ -4,23 +4,16 @@
 const gulp = require('gulp');
 const del = require('del');
 const template = require('gulp-template');
-const runSequence = require('run-sequence');
 
-gulp.task('info', function(callback) {
-  var tasks = [
-    'info:remove',
-    'info:template',
-    'info:setvariable',
-    callback
-  ];
-  runSequence.apply(this, tasks);
-});
+var infoTasks = [
+  'info:remove',
+  'info:template',
+  'info:setvariable',
+];
 
-gulp.task('info:remove', function(callback) {
-  del(['./tmp/info.js'], callback);
-});
+gulp.task('info:remove', gulp.series( callback => del(['./tmp/info.js'], callback)));
 
-gulp.task('info:template', function(callback) {
+gulp.task('info:template', gulp.series( callback => {
   if (fomanticVersion === "") {
     console.log('Fomantic version is missing.');
     process.exit(1);
@@ -33,9 +26,11 @@ gulp.task('info:template', function(callback) {
       fomanticVersion: fomanticVersion
     }))
     .pipe(gulp.dest('./tmp/'));
-});
+}));
 
-gulp.task('info:setvariable', function(callback) {
+gulp.task('info:setvariable', gulp.series( callback => {
   info = require('../tmp/info');
   callback();
-});
+}));
+
+gulp.task('info', gulp.series(infoTasks));

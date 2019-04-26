@@ -4,25 +4,22 @@
 const gulp = require('gulp');
 const del = require('del');
 const template = require('gulp-template');
-const runSequence = require('run-sequence');
 const git = require('gulp-git');
 const getFomanticDefinitions = require('../lib/definition.js');
 const getFomanticThemes = require('../lib/themes.js');
 const getFomanticSites = require('../lib/sites.js');
 
-gulp.task('fomantic-ui:clean', function(callback) {
-  del([info.pkg.base], callback);
-});
+gulp.task('fomantic-ui:clean', gulp.series( callback => del([info.pkg.base], callback)));
 
-gulp.task('fomantic-ui:clone', function(callback) {
+gulp.task('fomantic-ui:clone', gulp.series( callback => {
   var options = {
     args: info.pkg.base
   };
   git.clone(info.pkg.git, options, callback);
-});
+}));
 
-gulp.task('fomantic-ui:templates', function() {
-  return gulp.src('./templates/fomantic-ui/**/*')
+gulp.task('fomantic-ui:templates', gulp.series(() => 
+  gulp.src('./templates/fomantic-ui/**/*')
     .pipe(template({
       info: info,
       fomanticDefinitions: getFomanticDefinitions(require('../tmp/data/definitions.json')),
@@ -32,13 +29,13 @@ gulp.task('fomantic-ui:templates', function() {
       fomanticThemeLessFile: info.fomantic.dest.themeLessFileRelativePath,
       fomanticLessFile: info.fomantic.dest.fomanticLessFileRelativePath
     }))
-    .pipe(gulp.dest(info.pkg.base));
-});
+    .pipe(gulp.dest(info.pkg.base))
+));
 
-gulp.task('fomantic-ui', function(callback) {
-  runSequence('fomantic-ui:clean',
-    'fomantic-ui:clone',
-    'fomantic-ui:templates',
-    callback
-  );
-});
+var tasks = [ 
+  'fomantic-ui:clean',
+  'fomantic-ui:clone',
+  'fomantic-ui:templates'
+]
+
+gulp.task('fomantic-ui', gulp.series(tasks));

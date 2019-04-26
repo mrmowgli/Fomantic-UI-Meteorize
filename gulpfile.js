@@ -16,32 +16,26 @@ console.log("Package Version " + packageVersion);
 console.log("Fomantic Version " + fomanticVersion);
 
 const gulp = require('gulp');
-const runSequence = require('run-sequence');
 // import gulp-tasks
 const requireDir = require('require-dir');
-var tasks = requireDir('./gulp-tasks');
+var dirTasks = requireDir('./gulp-tasks');
 
 // Make info global
 info = null;
-try {
-  info = require('./tmp/info');
-} catch (e) {
-  console.log('./tmp/info.js does not exist. run gulp info');
-}
+gulp.task('requireInfo', gulp.series('info', callback => {
+  info = require('./tmp/info.js');
+  callback();
+}));
 
-gulp.task('meteorize', function(callback) {
-  var tasks = [
-    'clean',
-    'info',
-    'fomantic-ui-original',
-    'fomantic-ui-modified',
-    'data',
-    'fomantic-ui-data',
-    'fomantic-ui',
-    callback
-  ];
+var tasks = [
+  'clean',
+  'info',
+  'requireInfo',
+  'fomantic-ui-original',
+  'fomantic-ui-modified',
+  'data',
+  'fomantic-ui-data',
+  'fomantic-ui'
+];
 
-  runSequence.apply(this, tasks);
-});
-
-gulp.task('default', ['meteorize']);
+gulp.task('default', gulp.series(tasks));

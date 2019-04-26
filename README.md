@@ -47,7 +47,7 @@ $ make generate
 
 # publish mrmowgli:fomantic-ui-data
 $ make publish-ui-data
-# publish mrmowgli:semantic-ui
+# publish mrmowgli:fomantic-ui
 $ make publish-ui
 # clean
 $ make clean
@@ -70,7 +70,7 @@ $ make generate
 
 # publish mrmowgli:fomantic-ui-data
 $ make publish-ui-data
-# publish mrmowgli:semantic-ui
+# publish mrmowgli:fomantic-ui
 $ make publish-ui
 ```
 
@@ -87,8 +87,8 @@ file/folder | description
 dist/ | generated meteor packages
 gulp-tasks/ | gulp tasks separated in multiple files to ease the development
 lib/ | contains files that creates the data for themes, sites and definitions
-meteor-test/ | meteor app that uses semantic ui packages from dist/
+meteor-test/ | meteor app that uses fomantic ui packages from dist/
 scripts/ | script to publish the packages
 templates/ | files to copy (and generates) to the packages
-tmp/ | downloaded data like semantic ui and generated data from gulp
+tmp/ | downloaded data like fomantic ui and generated data from gulp
 gulpfile.js | tasks for generating the packages

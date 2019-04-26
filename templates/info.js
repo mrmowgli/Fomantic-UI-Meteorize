@@ -25,7 +25,7 @@ info.fomantic = {
   themesUrl: '/lib/fomantic-ui/src/themes/'
 };
 
-var srcSourcePath = info.fomantic.baseSrc + '/src';
+var srcSourcePath = info.fomantic.baseSrc + '/';
 var src = {
   srcPath: srcSourcePath,
   allFiles: srcSourcePath + '/**/*.*',
@@ -52,12 +52,12 @@ var dest = {
   allThemesAssetsFiles: destSourcePath + '/themes/**/assets/**/*.*',
   allSitesFiles: destSourcePath + '/site/**/*.*',
   themeConfigFileRelativePath: relativePath + '/theme.config.import.less',
-  semanticLessFile: destSourcePath + '/semantic.less',
-  semanticLessFileRelativePath: relativePath + '/semantic.less',
+  fomanticLessFile: destSourcePath + '/fomantic.less',
+  fomanticLessFileRelativePath: relativePath + '/fomantic.less',
   themeLessFile: destSourcePath + '/theme.import.less',
   themeLessFileRelativePath: relativePath + '/theme.import.less',
   definitionsPath: destSourcePath + '/definitions'
 };
-info.semantic.dest = dest;
+info.fomantic.dest = dest;
 
 module.exports = info;

@@ -1,23 +1,23 @@
 {
   "name": "meteorize-fomantic-ui",
-  "version": "1.5.1",
+  "version": "1.7.2",
   "description": "Makes Fomantic UI as a Meteor Package.",
   "main": "gulpfile.js",
   "dependencies": {
-    "del": "^1.1.1",
-    "gulp": "^3.8.11",
-    "gulp-git": "^1.1.0",
-    "gulp-insert": "^0.4.0",
-    "gulp-rename": "^1.2.0",
-    "lodash": "^3.6.0",
-    "run-sequence": "^1.0.2"
+    "del": "*",
+    "gulp": "^4.0.1",
+    "gulp-git": "^2.9.0",
+    "gulp-insert": "*",
+    "gulp-rename": "*",
+    "lodash": "^4.17.11",
+    "run-sequence": "*"
   },
   "devDependencies": {
-    "gulp-filelist": "^0.1.1",
-    "gulp-replace": "^0.5.3",
-    "gulp-template": "^3.0.0",
-    "gulp-util": "^3.0.4",
-    "require-dir": "^0.3.0"
+    "gulp-filelist": "*",
+    "gulp-replace": "*",
+    "gulp-template": "^5.0.0",
+    "gulp-util": "*",
+    "require-dir": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,7 +29,7 @@
   "keywords": [
     "meteor",
     "package",
-    "fomanticui"  
+    "fomanticui"
   ],
   "author": "Frederic Lemay, Andre Lewis",
   "license": "MIT"
